@@ -16,9 +16,14 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "yarn install && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "engines": {
+    "node": "11.9.0",
+    "npm": "6.5.0",
+    "yarn": "1.10.1"
   }
 }
