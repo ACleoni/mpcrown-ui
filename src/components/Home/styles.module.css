@@ -1,0 +1,703 @@
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.mainContainer {
+    display: grid;
+    grid-template: 200px 100vh 100vh 100vh 100vh 100vh 25vh / repeat(6, 1fr);
+}
+
+#header {
+    background: black;
+    opacity: .99;
+    grid-column: 1 / -1;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(1, 1fr)
+}
+
+
+.Modal {
+    background: rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: 3s ease-in-out;
+}
+
+@media only screen and (max-width: 414px) {
+    .flyer {
+        width: 320px;
+        height: 320px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .flyer {
+        width: 768px;
+        height: 768px;
+    }
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    grid-column: 2;
+    background-image: url('../../images/logo.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: invert(100%);
+}
+
+.mainNav {
+    width: 100%;
+    grid-column: 2;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+}
+
+.mainNav a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.mainNavList {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+#menuToggle {
+    display: none;
+}
+
+
+#headerBackground {
+    background: black;
+    background-image: url('../../images/mpcrown1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column: 1 / -1;
+    grid-row: 2;
+}
+
+
+#store {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0 0 0;
+    
+}
+
+/* Store Links Section */
+
+.btnSetStore {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.storeBtn, .btnBio {
+    background: black;
+    height: 50px;
+    width: 250px;
+    border: 2px solid #e7e7e7;
+    border-radius: 2px;
+    margin: 10px;
+    transition: .4s ease;
+    color: whitesmoke;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.storeBtn a, .btnBio a {
+    text-decoration: none;
+    color: #fff
+}
+
+
+.storeBtn:hover, .btnBio:hover {
+    cursor: pointer;
+    background: white;
+    color: black;
+}
+
+.btnBio {
+    align-self: center;
+    margin: 50px;
+}
+
+.storeItemsContainer {
+    padding: 60px 0 60px 0;
+    margin: 0 100px 0 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) / repeat(3, 1fr);
+    justify-content: space-between;
+    border-bottom: 1px solid lightgrey;
+}
+
+.video {
+    grid-area: 1 / 1;
+    height: 320px;
+    width: 320px;
+    align-self: center;
+    margin: 0;
+    background: url('../../images/video.jpg') no-repeat;
+    background-size: cover;
+}
+
+.store {
+    grid-area: 1 / 2;
+    height: 320px;
+    width: 320px;
+    align-self: center;
+    margin: 0;
+    background: url('../../images/cfihoodie.png') no-repeat;
+    background-size: cover;
+}
+
+
+.album {
+    grid-area: 1 / 3;
+    height: 320px;
+    width: 320px;
+    align-self: center;
+    margin: 0;
+    background: url('../../images/Dreality.jpg') no-repeat;
+    background-size: cover;
+}
+
+
+
+.itemModal {
+    background: rgba(0, 0, 0, .5);
+    height: 100%;
+    width: 100%;
+    z-index: 999999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalBtn {
+    padding: .5em;
+    width: 100px;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.modalBtn a{
+    color: white;
+    font-weight: 700;
+    font-size: 1em;
+}
+
+.modalBtn:hover{
+    cursor: pointer;
+}
+
+
+.info {
+    display: grid;
+    grid-template: 250px / repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+    margin: 0 100px 0 100px;
+    
+}
+
+.about {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cfi {
+    background-image: url('../../images/cfi.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+
+}
+
+.socialIconContainer {
+    width: 200px;
+    display: flex;
+    justify-content: space-around
+}
+
+.iconStyle {
+    height: 30px;
+}
+
+.iconStyle:hover {
+    cursor: pointer;
+}
+
+
+#mainVideo {
+    background: black;
+    opacity: 1;
+    grid-column: 1 / 7;
+    grid-row: 4;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+
+
+#bioPic {
+    grid-column: 1 / 4;
+    background-image: url('../../images/mpcrown2.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+#bio {
+    grid-column: 4 / 7;
+}
+
+.bioHeader {
+    height: 200px;
+    margin: 0;
+    background-image: url('../../images/logo.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+.bioDescription {
+    padding: 0 50px 0 50px;
+    line-height: 1.5;
+}
+
+.bioP1 {
+    padding: 0 0 10px 0;
+}
+
+.bioP2 {
+    padding: 10px 0 0 0;
+}
+
+
+#upcoming {
+    grid-column: 1 / 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.upcomingSubComponent {
+    border-radius: 5px;
+    margin: 40px 0 0 0;
+    align-self:  center;
+    height: 240px;
+    width: 320px;
+    background: url('../../images/mpcrown3.jpg');
+    background-size: cover;
+}
+
+
+#upcomingPic {
+    grid-column: 4 / 7;
+    background-image: url('../../images/mp.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+#mailing {
+    background: black;
+    opacity: .99;
+    grid-column: 1 / 7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    margin: 0 0 19.920px 0;
+}
+
+h4 {
+    margin-bottom: 10px;
+}
+
+.inputText {
+    width: 220px;
+    border: 2px solid gainsboro;
+    color: black;
+    font-size: 1.2em;
+    font-weight: 400;
+    padding: .6em;
+    margin: 0 20px 0 0;
+}
+
+.inputSubmit {
+    width: 120px;
+    border: 2px solid white;
+    color: white;
+    background: black;
+    padding: .6em;
+    font-size: 1.2em;
+    font-weight: 400;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+
+@media only screen and (width: 320px) {
+    .storeItemsContainer {
+        justify-items: center;
+    }
+
+    .video, .store, .album {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 414px) {
+    .mainContainer {
+        display: grid;
+        grid-template: 200px 500px auto 500px 500px auto 500px 500px 40vh / repeat(6, 1fr);
+    }
+
+    #header {
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+    }
+
+    #headerBackground {
+        background-position: center;
+    }
+
+    .logo {
+        grid-column: 1 / 3;
+        background-image: url('../../images/logo.jpg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        filter: invert(100%);
+    }
+
+    .mainNavList {
+        width: 100%;
+        list-style: none;
+        display: none;
+        justify-content: space-around;
+        padding: 0;
+    }
+
+    #headerBackground {
+        grid-row: 2
+    }
+
+    #store {
+        grid-row: 3
+    }
+
+    .storeBtn {
+        width: 146px;
+    }
+
+    .storeItemsContainer {
+        justify-content: center;
+        margin: 0
+    }
+
+    .video {
+        grid-area: 1;
+    }
+
+    .store {
+        grid-area: 2;
+    }
+
+    .album {
+        grid-area: 3
+    }
+
+    .video, .store, .album {
+        margin: 0 0 20px 0;
+    }
+
+    .info {
+        display: grid;
+        grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+        /* align-items: center; */
+        /* justify-content: center; */
+        margin: 0 100px 0 100px;
+        padding: 0;
+    }
+
+    .cfi {
+        grid-area: 1;
+        background-size: cover;
+        margin: 20px 0 0 0;
+    }
+
+    .contact {
+        grid-area: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .connect {
+        grid-area: 3
+    }
+
+    #mainVideo {
+        background: black;
+        opacity: 1;
+        grid-column: 1 / 7;
+        grid-row: 4;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+    }
+
+    #bioPic {
+        grid-column: 1 / 7;
+        grid-row: 5;
+    }
+
+    #bio {
+        grid-column: 1 / 7;
+        grid-row: 6;
+    }
+
+    .bioDescription {
+        padding: 0 20px 0 20px;
+    }
+
+    #upcoming {
+        grid-column: 1 / 7;
+        grid-row: 8;
+    }
+
+    #upcomingPic {
+        grid-column: 1 / 7;
+        grid-row: 7;
+    }
+
+    #mailing {
+        grid-row: 9;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .inputText{
+        margin: 0 0 20px 0;
+    }
+}
+
+
+
+
+@media only screen and (min-width: 415px) and (max-width: 1024px) {
+    .mainContainer {
+        display: grid;
+        grid-template: 200px 100vh auto 50vh 500px auto 500px 500px 40vh / repeat(6, 1fr);
+    }
+
+    #headerBackground {
+        background-position: center;
+    }
+
+    .storeBtn {
+        width: 218px;
+    }
+
+    .storeItemsContainer {
+        justify-content: center;
+        border-bottom: 1px solid lightgrey;
+        grid-gap: 40px;
+    }
+
+    .video {
+        grid-area: 1;
+        height: 450px;
+        width: 450px;
+    }
+
+    .store {
+        grid-area: 2;
+        height: 450px;
+        width: 450px;
+    }
+
+    .album {
+        grid-area: 3;
+        height: 450px;
+        width: 450px;
+    }
+
+    .info {
+        margin: 0 40px 0 40px;
+    }
+
+    .cfi {
+        background-size: cover;
+    }
+
+    #bioPic {
+        grid-column: 1 / 4;
+        grid-row: 5;
+    }
+
+    
+}
+
+
+
+
+
+@media only screen and (max-width: 1024px) {
+    .mainNav {
+        display: none;
+
+    }
+
+    ul a {
+        text-decoration: none;
+        color: #fff;
+        transition: color 0.3s ease;
+    }
+    
+    #menuToggle{
+        display: block;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: #000;
+        padding: 5px 5px 2px 5px;
+        z-index: 1;
+        -webkit-user-select: none;
+                user-select: none;
+    }
+
+    #menuToggle input {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: -7px;
+        left: -5px;
+
+        cursor: pointer;
+        opacity: 0;
+        z-index: 2;
+        -webkit-touch-callout: none;
+    }
+
+    #menuToggle span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin: 0 0 5px 0;
+        position: relative;
+        background: #fff;
+        border-radius: 2px;
+        z-index: 1;
+        transform-origin: 4px 0px;
+
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    opacity 0.55s ease;
+    }
+
+    #menuToggle span:first-child {
+        transform-origin: 0% 0%;
+    }
+
+    #menuToggle span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+    }
+
+    #menuToggle input:checked ~ span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        
+    }
+
+    #menuToggle input:checked ~ span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    #menuToggle input:checked ~ span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(0, -1px);
+    }
+
+    #barMenu {
+        position: absolute;
+        width: 300px;
+        margin: -100px 0 0 -50px;
+        padding: 50px;
+        padding-top: 125px;
+
+        background: #232323;
+        list-style-type: none;
+        -webkit-font-smoothing: antialiased;
+
+        transform-origin: 0% 0%;
+        transform: translate(-100%, 0);
+
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+    
+    #barMenu li{
+        padding: 10px 0;
+        font-size: 22px;
+    }
+
+    #menuToggle input:checked ~ ul {
+        transform: none;
+    }
+    
+}
+
